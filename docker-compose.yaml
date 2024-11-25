@@ -1,0 +1,14 @@
+services:
+  nest-database:
+    image: postgres:13
+    container_name: lab_3
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - ${POSTGRES_PORT}:5432 #Host:Container
+    volumes:
+      - my_pgdata:/var/lib/postgresql/data
+volumes:
+  my_pgdata:
